@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+typedef unsigned int uint;
+using namespace std;
+
+// SLUCAJNOST (RANDOM)
+
+void slucajnost (uint* polje){
+
+	srand (static_cast <uint>(time(0)));
+	
+	for (int i = 0; i < 50; i++)
+	{   int broj = rand();
+		polje[i] = broj;
+	}
+	for (int i = 0; i < 50; i++)
+	{
+		cout << polje[i] << endl;
+	}
+}
+
+int main(){
+	uint polje [50];
+	slucajnost (polje);
+	cout << endl;
+	system("pause");
+	return 0;
+}
