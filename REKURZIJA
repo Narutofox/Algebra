@@ -1,26 +1,26 @@
-//#include <iostream>
-//#include <string>
-//using namespace std;
-//typedef unsigned int uint;
-//// REKURZIJA
-//
-//double potenciranje (double broj, uint potencija){
-//	if (potencija == 0 )
-//	{
-//		return 1.0;
-//	}
-//	else
-//	{
-//		return broj * potenciranje(broj, potencija -1);
-//	}
-//}
-//int main(){
-//	double a = 25.7;
-//	double b = 3;
-//	
-//	cout << potenciranje(a , b) << endl;
-//
-//	cout << endl;
-//	system("pause");
-//	return 0;
-//}
+#include <iostream>
+#include <string>
+using namespace std;
+typedef unsigned int uint;
+// REKURZIJA
+
+double potenciranje (double broj, uint potencija){
+	if (potencija == 0 )
+	{
+		return 1.0;
+	}
+	else
+	{
+		return broj * potenciranje(broj, potencija -1);
+	}
+	}
+int main(){
+	double a = 25.7;
+	double b = 3;
+	
+	cout << potenciranje(a , b) << endl;
+
+	cout << endl;
+	system("pause");
+	return 0;
+}
