@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bst", "Bst\Bst.vcxproj", "{CE00AF24-8478-457A-8311-E37875A97DE8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Hrpa", "Hrpa\Hrpa.vcxproj", "{B610AC54-17DE-4AB4-8404-A9FF3A37A2A5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Zad3", "zad3\Project2.vcxproj", "{D3FDE8FB-E4FC-489C-85C7-DE006B4190CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE00AF24-8478-457A-8311-E37875A97DE8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CE00AF24-8478-457A-8311-E37875A97DE8}.Debug|Win32.Build.0 = Debug|Win32
+		{CE00AF24-8478-457A-8311-E37875A97DE8}.Release|Win32.ActiveCfg = Release|Win32
+		{CE00AF24-8478-457A-8311-E37875A97DE8}.Release|Win32.Build.0 = Release|Win32
+		{B610AC54-17DE-4AB4-8404-A9FF3A37A2A5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B610AC54-17DE-4AB4-8404-A9FF3A37A2A5}.Debug|Win32.Build.0 = Debug|Win32
+		{B610AC54-17DE-4AB4-8404-A9FF3A37A2A5}.Release|Win32.ActiveCfg = Release|Win32
+		{B610AC54-17DE-4AB4-8404-A9FF3A37A2A5}.Release|Win32.Build.0 = Release|Win32
+		{D3FDE8FB-E4FC-489C-85C7-DE006B4190CA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D3FDE8FB-E4FC-489C-85C7-DE006B4190CA}.Debug|Win32.Build.0 = Debug|Win32
+		{D3FDE8FB-E4FC-489C-85C7-DE006B4190CA}.Release|Win32.ActiveCfg = Release|Win32
+		{D3FDE8FB-E4FC-489C-85C7-DE006B4190CA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

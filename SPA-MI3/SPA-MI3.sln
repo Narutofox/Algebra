@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Project1", "Project1\Project1.vcxproj", "{E51EDBCF-1870-428E-8158-6E8585C34701}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BinarnoPretrazivanje", "..\..\..\..\Desktop\Ivan\Fakultet\2. semestar\Strukture podataka i algoritmi\RVS14-SPA-Pred-11-Primjeri\BinarnoPretrazivanje\BinarnoPretrazivanje\BinarnoPretrazivanje.vcxproj", "{F3D00EFC-DA34-4D98-A63C-51CBFE20BF1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E51EDBCF-1870-428E-8158-6E8585C34701}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E51EDBCF-1870-428E-8158-6E8585C34701}.Debug|Win32.Build.0 = Debug|Win32
+		{E51EDBCF-1870-428E-8158-6E8585C34701}.Release|Win32.ActiveCfg = Release|Win32
+		{E51EDBCF-1870-428E-8158-6E8585C34701}.Release|Win32.Build.0 = Release|Win32
+		{F3D00EFC-DA34-4D98-A63C-51CBFE20BF1A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F3D00EFC-DA34-4D98-A63C-51CBFE20BF1A}.Debug|Win32.Build.0 = Debug|Win32
+		{F3D00EFC-DA34-4D98-A63C-51CBFE20BF1A}.Release|Win32.ActiveCfg = Release|Win32
+		{F3D00EFC-DA34-4D98-A63C-51CBFE20BF1A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal
