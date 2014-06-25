@@ -1,57 +1,116 @@
-//#include <iostream>
-//#include <string>
-//#include "symbol_table.h"
-//using namespace std;
-//
-//void ispisi(student* s) {
-//	if (s != nullptr) {
-//		cout << "Pronasao studenta: " << s->ime << " " << s->prezime << endl;
-//	}
-//	else {
-//		cout << "Trazeni student ne postoji" << endl;
-//	}
-//}
-//
-//int main() {
-//
-//	// Kreiramo tablicu simbola.
-//	student s1;
-//	s1.ime = "Miro";
-//	s1.prezime = "Miric";
-//	s1.broj_indeksa = "9584515151";
-//	s1.jmbag = "1111111111";
-//
-//	student s2;
-//	s2.ime = "Ana";
-//	s2.prezime = "Anic";
-//	s2.broj_indeksa = "8511815415";
-//	s2.jmbag = "2222222222";
-//
-//	student s3;
-//	s3.ime = "Iva";
-//	s3.prezime = "Ivic";
-//	s3.broj_indeksa = "9876422818";
-//	s3.jmbag = "3333333333";
-//
-//	symbol_table st;
-//	st.put(s1.jmbag, s1);
-//	st.put(s2.jmbag, s2);
-//	st.put(s3.jmbag, s3);
-//
-//	// Trazimo postojecu osobu.
-//	student* postojeci = st.get("2222222222");
-//	ispisi(postojeci);
-//
-//	// Trazimo nepostojecu osobu.
-//	postojeci = st.get("5555555555");
-//	ispisi(postojeci);
-//
-//	// Uklanjamo osobu
-//	st.remove("2222222222");
-//
-//	// Trazimo osobu koja vise ne postoji.
-//	postojeci = st.get("2222222222");
-//	ispisi(postojeci);
-//
-//	return 0;
-//}
+#include <iostream>
+#include <string>
+#include "symbol_table.h"
+#include "osoba.h"
+#include <fstream>
+using namespace std;
+
+int prebroji(){
+	int brojac = 0;
+	string s;
+	ifstream dat2("Radnici.txt");
+	if (!dat2)
+	{
+		cerr <<"Pogreska";
+		return 1;
+	}
+
+	while (getline(dat2,s))
+		{
+			brojac ++;
+		}
+	return brojac;
+}
+
+void unos(osoba radnik){
+	string jos;
+	ofstream dat("Radnici.txt");
+	if (!dat)
+	{
+		cerr <<"Pogreska";
+		return ;
+	}
+	do
+	{
+		cout <<"Unesite ime radnika: "<< endl;
+		cin >> radnik.Ime;
+		cout <<"Unesite prezime radnika: "<<endl;
+		cin >> radnik.Prezime;
+		cout <<"Unesite dob radnika: " << endl;
+		cin >> radnik.Dob;
+		cout <<"Unesite ID radnika: " << endl;
+		cin >> radnik.ID;
+
+		dat << radnik.Ime <<"\t"<<radnik.Prezime<<"\t" << radnik.Dob <<"\t"<< radnik.ID<< endl;
+
+		cout <<"Jos Da/Ne: ";
+		cin >> jos;
+	} while (jos== "Da" || jos == "DA" || jos == "da" || jos == "dA");
+	dat.close();
+
+}
+
+void ispis(osoba* polje, int broj){
+		string s;
+	ifstream dat2("Radnici.txt");
+	if (!dat2)
+	{
+		cerr <<"Pogreska";
+		return;
+	}
+		
+		
+		for (int i = 0; i < broj; i++)
+		{
+			getline(dat2,polje[i].Ime,'\t');
+			getline(dat2,polje[i].Prezime,'\t');
+			getline(dat2,s,'\t');
+			polje[i].Dob = atoi(s.c_str());
+			getline(dat2,s);
+			polje[i].ID = atoi(s.c_str());
+		}
+
+
+		for (int i = 0; i < broj; i++)
+		{
+			cout << polje[i].Ime <<" "<< polje[i].Prezime <<" "<<polje[i].Dob <<" "<< polje[i].ID<< endl;
+		}
+		dat2.close();
+}
+void ispisi(osoba* s) {
+	if (s != nullptr) {
+		cout << "Pronasao radnika: " << s->Ime << " " << s->Prezime << endl;
+	}
+	else {
+		cout << "Trazeni radnik ne postoji" << endl;
+	}
+}
+int main(){
+	osoba radnik;
+	int a;
+	string jos;
+	unos(radnik);
+	int broj = prebroji();
+	osoba* polje = new osoba[broj];
+	ispis(polje,broj);
+
+	symbol_table id;
+	for (int i = 0; i < broj; i++)
+	{
+		id.put(polje[i].ID,polje[i]);
+	}
+	do
+	{
+	cout <<"Unesite ID radnika za pretrazivanje: ";
+	cin >> a;
+	osoba* postojeci = id.get(a);
+	ispisi(postojeci);
+	cout <<"Ponovo Da/Ne? ";
+	cin >> jos;
+	} while (jos== "Da" || jos == "DA" || jos == "da" || jos == "dA");
+	
+
+	system("pause");
+	delete[] polje;
+	return 0;
+}

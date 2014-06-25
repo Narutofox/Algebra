@@ -1,0 +1,10 @@
+1	pas
+2	macka
+3	koza
+4	krava
+5	ptica
+6	slon
+7	tigar
+8	noj
+9	sismis
+10	tuljan
