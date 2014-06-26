@@ -70,7 +70,7 @@ bool rjecnik::sekvenicja(unsigned int index,int znak){
 		return true;
 		
 	}
-	else if (znak == 2) // PROBLEM
+	else if (znak == 2)
 	{
 	for (int i = 0; i < brojac; i++)
 		{
