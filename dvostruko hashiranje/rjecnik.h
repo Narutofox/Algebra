@@ -29,8 +29,6 @@ public:
 };
 int brojac = 0;
 int a;
-//char r;
-//char s;
 #endif
 
 
