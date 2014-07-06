@@ -18,7 +18,6 @@ rjecnik::rjecnik(){
 		_polje[i] = nullptr;
 		
 	}
-	//ELTYPE* _polje = new ELTYPE[BROJ_ELEMENATA];
 }
 rjecnik::~rjecnik(){
 	

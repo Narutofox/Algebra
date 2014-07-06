@@ -12,7 +12,6 @@ typedef Zivotinja ELTYPE;
 class rjecnik {
 private:
 	static const int BROJ_ELEMENATA = 30;
-	/*Zivotinja* _polje = new Zivotinja [BROJ_ELEMENATA];*/
 	unsigned int h(KEY key, int i);
 	unsigned int h1(KEY key);
 	unsigned int h2(KEY key);
