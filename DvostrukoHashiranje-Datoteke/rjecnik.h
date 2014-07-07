@@ -16,8 +16,6 @@ private:
 	unsigned int h1(KEY key);
 	unsigned int h2(KEY key);
 	ELTYPE* _polje[BROJ_ELEMENATA];
-	bool sekvenicja(unsigned int index,int znak);
-	unsigned int sekvencijsko_polje[BROJ_ELEMENATA];
 public:
 	rjecnik();
 	~rjecnik();

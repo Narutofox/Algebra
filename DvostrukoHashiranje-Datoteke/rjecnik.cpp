@@ -1,6 +1,5 @@
 #include"rjecnik.h"
 
-int brojac = 0;
 unsigned int rjecnik :: h1(KEY key){
 	return key % BROJ_ELEMENATA;
 }
@@ -18,6 +17,7 @@ rjecnik::rjecnik(){
 		_polje[i] = nullptr;
 		
 	}
+	
 }
 rjecnik::~rjecnik(){
 	
@@ -27,65 +27,8 @@ rjecnik::~rjecnik(){
 	}
 }
 
-bool rjecnik::sekvenicja(unsigned int index,int znak){
-	if (znak == 1)
-	{
-		if (brojac == BROJ_ELEMENATA)
-		{
-			cout <<"Polje je puno";
-			return false;
-		}
-		sekvencijsko_polje[brojac] = index;
-		brojac ++;
-		return true;
-		
-	}
-	else if (znak == 2) 
-	{
-	for (int i = 0; i < brojac; i++)
-		{
-			if (sekvencijsko_polje[i] == index)
-			{
-				int a = i;
-				int* temp = new int[brojac];
-				for (int j = 0; j < a; j++)
-				{
-					temp[j] = sekvencijsko_polje[j];
-				}
-				for (int o = a+1; o < brojac; o++)
-				{
-					temp[o] = sekvencijsko_polje[o];
-				}
-				brojac --;
-				for (int d = 0; d < brojac; d++)
-				{
-					sekvencijsko_polje[d] = temp[d];
-				}
-				delete[] temp;
-				return true;
-			}
-			}
-	return false;
-	}
-	else if (znak == 3)
-	{
-		for (int i = 0; i < brojac; i++)
-		{
-			if (sekvencijsko_polje[i] == index)
-			{
-				return true;
-			}
-			
-	}
-	return false;
-}
-	else
-	{
-		return false;
-	}
-}
 void rjecnik::insert(KEY key, ELTYPE* value){
-	int insert = 1;
+	
 	for (unsigned int i = 0; i < BROJ_ELEMENATA; i++)
 	{
 		unsigned int index = h(key,i);
@@ -93,17 +36,16 @@ void rjecnik::insert(KEY key, ELTYPE* value){
 		if (_polje[index] == nullptr)
 		{
 			_polje[index] = value;
-			sekvenicja(index,insert);
 			break;
 		}
 	}
 }	
 void rjecnik::remove (KEY key){
-	int remove = 2;
+	
 	for (unsigned int i = 0; i < BROJ_ELEMENATA; i++)
 	{
 		unsigned int index = h(key,i);
-		if (sekvenicja(index,remove))
+		if (_polje[index]!= nullptr)
 		{
 			_polje[index]= nullptr;
 			break;
@@ -116,19 +58,22 @@ void rjecnik::remove (KEY key){
 	}
 }
 void rjecnik::search(KEY key){
-	int search = 3;
+
 	for (unsigned int i = 0; i < BROJ_ELEMENATA; i++)
 	{
 		unsigned int index = h(key,i);
-		if (sekvenicja(index,search))
-		{
-			cout <<"Element sa kljucem "<< key << " je "<< _polje[index]->naziv << endl;
-			break;
-		}
-		else 
+
+		if (_polje[index] == nullptr)
 		{
 			cout << "Nema trezenog elementa" << endl;
 			break;
 		}
-	}	
-}
+		
+		else if (_polje[index]->broj == key)
+		{
+			cout <<"Element sa kljucem "<< key << " je "<< _polje[index]->naziv << endl;
+			break;
+		}
+	}
+			
+}	
