@@ -1,0 +1,6 @@
+Kia	75
+BMW	210
+Mercedes	200
+Honda	120	
+Subaru	110
+Hyundai	60
